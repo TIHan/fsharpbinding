@@ -154,6 +154,19 @@
 
   <Extension path="/MonoDevelop/Ide/Commands">
     <Category _name = "F# Integration" id="F# Integration">
+    
+      <Command _description="Move the current file up the project tree"
+          _label="Move file up"
+          id="MonoDevelop.FSharp.FSharpCommands.MoveUp"
+          macShortcut="Alt|Up"
+          shortcut="Alt|Up" />
+
+      <Command _description="Move the current file down the project tree"
+          _label="Move file Down"
+          id="MonoDevelop.FSharp.FSharpCommands.MoveDown"
+          macShortcut="Alt|Down"
+          shortcut="Alt|Down" />
+          
       <Command id="MonoDevelop.FSharp.FSharpCommands.ShowFSharpInteractive"
           _label = "F# Interactive"
           type="check"
@@ -187,6 +200,11 @@
   </Extension>
 
 
+  <Extension path = "/MonoDevelop/Ide/ContextMenu/ProjectPad">
+    <CommandItem id = "MonoDevelop.FSharp.FSharpCommands.MoveUp" />
+    <CommandItem id = "MonoDevelop.FSharp.FSharpCommands.MoveDown" />
+    </Extension>
+
   <Extension path = "/MonoDevelop/SourceEditor2/ContextMenu/Editor">
     <CommandItem id = "MonoDevelop.FSharp.FSharpCommands.SendSelection" />
     <CommandItem id = "MonoDevelop.FSharp.FSharpCommands.SendLine" />
@@ -197,6 +215,8 @@
     <CommandItem id = "MonoDevelop.FSharp.FSharpCommands.SendSelection" />
     <CommandItem id = "MonoDevelop.FSharp.FSharpCommands.SendLine" />
     <CommandItem id = "MonoDevelop.FSharp.FSharpCommands.SendReferences" />
+      <CommandItem id = "MonoDevelop.FSharp.FSharpCommands.MoveUp" />
+    <CommandItem id = "MonoDevelop.FSharp.FSharpCommands.MoveDown" />
   </Extension>
 
 </Addin>
