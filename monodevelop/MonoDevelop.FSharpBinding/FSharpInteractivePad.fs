@@ -48,6 +48,8 @@ type FSharpCommands =
   | ShowFSharpInteractive = 0
   | SendSelection = 1
   | SendLine = 2
+  | MoveUp = 3
+  | MoveDown = 4
 
 type KillIntent = 
   | Restart

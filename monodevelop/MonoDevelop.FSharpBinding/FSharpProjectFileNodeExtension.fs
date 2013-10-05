@@ -1,10 +1,49 @@
 namespace MonoDevelop.FSharp
 
 open System
+open System.Diagnostics
 open System.IO
 open MonoDevelop.Core
+open MonoDevelop.Components.Commands
 open MonoDevelop.Ide.Gui.Components
+
 open MonoDevelop.Projects
+open MonoDevelop.Ide
+open MonoDevelop.Ide.Gui
+
+open System.Collections.Generic
+open System.Linq
+open System.Xml
+open System.Xml.Linq
+
+
+type FSharpProjectNodeCommandHandler() =
+  inherit NodeCommandHandler()
+
+  [<CommandHandler(MonoDevelop.FSharp.FSharpCommands.MoveUp)>]
+  member x.MoveUp() = 
+    //This never gets hit
+    ()
+
+  [<CommandUpdateHandler(MonoDevelop.FSharp.FSharpCommands.MoveUp)>]
+  member x.OnUpdateMoveUp(cmd: CommandInfo) =
+    //This never gets hit
+    ()
+   
+  [<CommandHandler(MonoDevelop.FSharp.FSharpCommands.MoveDown)>]
+  member x.MoveDown() =
+    //This never gets hit
+    ()
+
+  [<CommandUpdateHandler(MonoDevelop.FSharp.FSharpCommands.MoveDown)>]
+  member x.OnUpdateMoveDown(cmd: CommandInfo) =
+  //This never gets hit
+    ()
+
+  override x.ActivateItem() =
+    //This gets hit
+    () 
+
 
 type FSharpProjectFileNodeExtension() =
   inherit NodeBuilderExtension()
@@ -23,5 +62,5 @@ type FSharpProjectFileNodeExtension() =
         NodeBuilder.DefaultSort
     else
       NodeBuilder.DefaultSort
-    
-    
+
+  override x.CommandHandlerType with get() = typeof<FSharpProjectNodeCommandHandler>
