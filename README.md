@@ -64,14 +64,20 @@ On Mac and Linux the template includes a copy of the basic ASP.NET MVC 4 core DL
 
 Normally you should get the binding from the repository. If you want to build and install it yourself and develop it, try this:
 
-Linux/Mac:
+
+#### Build on Linux/Mac:
+
+First get nuget.exe and install the required nuget packages:
+
+
+Now make:
 
 	cd monodevelop
 	./configure.sh 
 	make 
 	make install
 
-Windows (builds and installs the Debug version into Xamarin Studio - adjust as needed)
+#### Build on Windows (builds and installs the Debug version into Xamarin Studio - adjust as needed)
 
 	cd monodevelop
 	configure.bat
